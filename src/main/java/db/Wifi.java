@@ -20,6 +20,7 @@ public class Wifi {
     	long totalCount = 0;
     	WifiService wifiService = new WifiService();
     	List<WifiInfo> list = new ArrayList<>();
+
     	for (int k = 0; k < 15; k++) {
     		JSONObject json = (JSONObject) jsonParser.parse(readUrl(k));
         	JSONObject TbPublicWifiInfo = (JSONObject) json.get("TbPublicWifiInfo");
@@ -47,7 +48,6 @@ public class Wifi {
                 wifiInfo.setWorkDttm(String.valueOf(array.get("WORK_DTTM"))); 
                 list.add(wifiInfo);
         	}
-
     	}
     	wifiService.register(list);
     	long end = System.nanoTime();
@@ -79,6 +79,7 @@ public class Wifi {
 		} else {
 				rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
 		}
+		
 		StringBuilder sb = new StringBuilder();
 		String line;
 		while ((line = rd.readLine()) != null) {

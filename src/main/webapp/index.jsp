@@ -107,7 +107,7 @@
 		}
 		.btn-outline:hover {
 		    letter-spacing: 1px;
-		    transform: scale(1.1);
+		    transform: scale(1.2);
 		    cursor: pointer;
 		}
 		.btn-gray-outline:hover {
