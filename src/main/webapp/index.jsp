@@ -46,8 +46,9 @@
 		}
 		body form input
 		{
-			border-radius: 15px;
-			font-size: 16pt;
+			border-radius: 5px;
+			padding: 3px;
+			font-size: 15pt;
 			width: 150px;
 			text-align: center;
 		}
@@ -92,8 +93,8 @@
 		
 		.btn-outline {
 		    position: relative;
-		    padding: 10px 20px;
-		    border-radius: 15px;
+		    padding: 8px 20px;
+		    border-radius: 5px;
 		    font-family: "paybooc-Light", sans-serif;
 		    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 		    text-decoration: none;
@@ -106,7 +107,7 @@
 		}
 		.btn-outline:hover {
 		    letter-spacing: 1px;
-		    transform: scale(1.2);
+		    transform: scale(1.1);
 		    cursor: pointer;
 		}
 		.btn-gray-outline:hover {
