@@ -92,7 +92,7 @@ public class WifiHistory extends JDBCTemplate {
 	
 	public void histInsert(String lat_val, String lnt_val) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
-		sdf.setTimeZone(TimeZone.getTimeZone("GMT")); 
+		sdf.setTimeZone(TimeZone.getTimeZone("Asia/Seoul")); 
 		Connection connection = getConnection();
 		PreparedStatement preparedStatement = null;
 		

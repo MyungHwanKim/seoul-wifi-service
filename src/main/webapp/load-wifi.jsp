@@ -13,6 +13,9 @@
 		.home-button, .information
 		{
 			text-align: center;
+		}
+		.home-button a
+		{
 			color: black;
 		}
 		.information
