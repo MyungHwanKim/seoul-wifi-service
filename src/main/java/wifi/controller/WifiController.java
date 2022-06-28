@@ -1,7 +1,4 @@
-package db;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+package wifi.controller;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -10,11 +7,18 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Wifi {
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import wifi.dto.WifiInfo;
+import wifi.service.WifiService;
+
+public class WifiController {
 	// 인증키
     static String key = "574b68744e6b6d683532686a666873";
     
-    public long Wifi() throws Exception {
+    public long WifiController() throws Exception {
     	JSONParser jsonParser = new JSONParser();
     	long start = System.nanoTime();
     	long totalCount = 0;

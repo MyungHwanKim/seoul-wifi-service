@@ -1,10 +1,10 @@
-<%@page import="db.WifiHistoryInfo"%>
-<%@page import="db.WifiHistory"%>
+<%@page import="wifi.dto.WifiHistoryInfo"%>
+<%@page import="wifi.service.WifiHistoryService"%>
 <%@page import="java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	WifiHistory wifiHistory = new WifiHistory();
+WifiHistoryService wifiHistory = new WifiHistoryService();
 	List<WifiHistoryInfo> histroyList = wifiHistory.histroyList();
 %>
 <!DOCTYPE html>

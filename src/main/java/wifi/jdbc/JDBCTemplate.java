@@ -1,4 +1,4 @@
-package db;
+package wifi.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +18,7 @@ public class JDBCTemplate {
 		
 		Connection connection = null;
 		
-		String dbFile = "C:\\zerobase_project_1\\workspace\\wifi\\wifi_db";
+		String dbFile = "C:\\dev\\workspace\\wifi\\wifi_db";
 		try {
 			connection = DriverManager.getConnection("jdbc:sqlite:" + dbFile);
 		} catch (SQLException e) {

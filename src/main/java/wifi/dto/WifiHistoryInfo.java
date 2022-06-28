@@ -1,4 +1,4 @@
-package db;
+package wifi.dto;
 
 import lombok.Data;
 

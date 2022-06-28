@@ -1,5 +1,5 @@
-package db;
-import lombok.*;
+package wifi.dto;
+import lombok.Data;
 
 @Data
 public class WifiInfo {

@@ -1,9 +1,14 @@
-package db;
+package wifi.service;
 
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
+import wifi.dto.WifiInfo;
+import wifi.jdbc.JDBCTemplate;
 
 public class WifiService extends JDBCTemplate{
 	public String check(String value) {

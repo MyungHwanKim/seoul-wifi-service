@@ -1,4 +1,4 @@
-<%@page import="db.WifiHistory"%>
+<%@page import="wifi.service.WifiHistoryService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 </head>
 <body>
 	<%
-		WifiHistory wifiHistory = new WifiHistory();
+	WifiHistoryService wifiHistory = new WifiHistoryService();
 		int affected = wifiHistory.delete(request.getParameter("id"));
 		String message = "삭제되지 않았습니다.";
 		if (affected > 0) {

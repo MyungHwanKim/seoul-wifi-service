@@ -1,7 +1,7 @@
-<%@page import="db.WifiHistory"%>
-<%@page import="db.WifiService"%>
+<%@page import="wifi.service.WifiHistoryService"%>
+<%@page import="wifi.service.WifiService"%>
 <%@page import="java.util.* " %>
-<%@page import="db.WifiInfo"%>
+<%@page import="wifi.dto.WifiInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -189,7 +189,7 @@
 				for (int i = 0; i < wifiList.size(); i++) {
 					WifiInfo wifiInfo = wifiList.get(i);
 					if (i == 0) {
-						WifiHistory wifiHistory = new WifiHistory();
+						WifiHistoryService wifiHistory = new WifiHistoryService();
 						wifiHistory.histInsert(lat_val, lnt_val);
 					}
 			%>		
