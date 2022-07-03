@@ -124,7 +124,8 @@ public class WifiService extends JDBCTemplate{
 			StringBuilder sb = new StringBuilder();
 			sb.append("INSERT INTO WIFI_INFO ")
 				.append(" (X_SWIFI_MGR_NO, X_SWIFI_WRDOFC, X_SWIFI_MAIN_NM, X_SWIFI_ADRES1, X_SWIFI_ADRES2 ")
-				.append("	, X_SWIFI_INSTL_TY, X_SWIFI_INSTL_MBY, X_SWIFI_SVC_SE, X_SWIFI_CMCWR, X_SWIFI_CNSTC_YEAR, X_SWIFI_INOUT_DOOR, LAT, LNT, WORK_DTTM, SIN_LAT, SIN_LNT, COS_LAT, COS_LNT) ")
+				.append("	, X_SWIFI_INSTL_TY, X_SWIFI_INSTL_MBY, X_SWIFI_SVC_SE, X_SWIFI_CMCWR, X_SWIFI_CNSTC_YEAR, X_SWIFI_INOUT_DOOR,")
+				.append(" LAT, LNT, WORK_DTTM, SIN_LAT, SIN_LNT, COS_LAT, COS_LNT) ")
 				.append(" VALUES")
 				.append(" (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ");
 			
