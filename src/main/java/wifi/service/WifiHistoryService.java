@@ -25,13 +25,12 @@ public class WifiHistoryService extends JDBCTemplate {
 		
 		try {
 			
-			String sql = "SELECT * "
-					+ "FROM WIFI_HISTORY "
-					+ "ORDER BY ID DESC "
-					+ ";"
-					;
+			StringBuilder sb = new StringBuilder();
+			sb.append("SELECT * ")
+				.append("FROM WIFI_HISTORY ")
+				.append("ORDER BY ID DESC; ");
 			
-			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement = connection.prepareStatement(sb.toString());
 			rs = preparedStatement.executeQuery();
 			
 			while (rs.next()) {
@@ -66,12 +65,12 @@ public class WifiHistoryService extends JDBCTemplate {
 		
 		try {
 			
-			String sql = "SELECT ID "
-					+ "FROM WIFI_HISTORY "
-					+ "ORDER BY ID DESC "
-					;
+			StringBuilder sb = new StringBuilder();
+			sb.append("SELECT ID ")
+				.append("FROM WIFI_HISTORY ")
+				.append("ORDER BY ID DESC ");
 			
-			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement = connection.prepareStatement(sb.toString());
 			
 			rs = preparedStatement.executeQuery();
 			
@@ -99,13 +98,14 @@ public class WifiHistoryService extends JDBCTemplate {
 		PreparedStatement preparedStatement = null;
 		
 		try {			
-			String sql = "INSERT INTO WIFI_HISTORY "
-					+ " (ID, LAT, LNT, CURDATE )"
-					+ " VALUES "
-					+ " (?, ?, ?, ?)"
-					;
+
+			StringBuilder sb = new StringBuilder();
+			sb.append( "INSERT INTO WIFI_HISTORY ")
+				.append(" (ID, LAT, LNT, CURDATE )")
+				.append(" VALUES ")
+				.append(" (?, ?, ?, ?)");
 			
-			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement = connection.prepareStatement(sb.toString());
 			preparedStatement.setInt(1, getNext());
 			preparedStatement.setString(2, lat_val);
 			preparedStatement.setString(3, lnt_val);
@@ -133,11 +133,12 @@ public class WifiHistoryService extends JDBCTemplate {
 		PreparedStatement preparedStatement = null;
 		
 		try {
-			
-			String sql = "DELETE FROM WIFI_HISTORY"
-					+ " WHERE ID = ? ";
 
-			preparedStatement = connection.prepareStatement(sql);
+			StringBuilder sb = new StringBuilder();
+			sb.append("DELETE FROM WIFI_HISTORY")
+				.append(" WHERE ID = ? ");
+			
+			preparedStatement = connection.prepareStatement(sb.toString());
 			preparedStatement.setString(1, ID.trim());
 			
 			affected = preparedStatement.executeUpdate();

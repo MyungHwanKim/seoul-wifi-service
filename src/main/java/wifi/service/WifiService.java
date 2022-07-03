@@ -34,15 +34,17 @@ public class WifiService extends JDBCTemplate{
 		PreparedStatement preparedStatement = null;
 		ResultSet rs = null;
 		
-		String sql = " SELECT *, (" + cosLat + " * " + "COS_LAT * ( COS_LNT * " + cosLnt
-				+ "+ SIN_LNT *" + sinLnt + ") + " + sinLat + "* SIN_LAT) AS partial_dist "
-				+ " FROM WIFI_INFO "
-				+ " WHERE LAT != 0 OR LNT != 0"
-				+ " ORDER BY partial_dist DESC"
-				+ " LIMIT 20 ";
+		StringBuilder sb = new StringBuilder();
+		sb.append(" SELECT *, (").append(cosLat).append(" * ").append("COS_LAT * ( COS_LNT * ").append(cosLnt)
+			.append("+ SIN_LNT *").append(sinLnt).append(") + ").append(sinLat).append("* SIN_LAT) AS partial_dist ")
+			.append(" FROM WIFI_INFO ")
+			.append(" WHERE LAT != 0 OR LNT != 0")
+			.append(" ORDER BY partial_dist DESC")
+			.append(" LIMIT 20 ");
+
 		try {
 			
-			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement = connection.prepareStatement(sb.toString());
 			
 			rs = preparedStatement.executeQuery();
 			
@@ -119,12 +121,14 @@ public class WifiService extends JDBCTemplate{
 		try {
 			connection.setAutoCommit(false);
 			
-			String sql = "INSERT INTO WIFI_INFO "
-					+ " (X_SWIFI_MGR_NO, X_SWIFI_WRDOFC, X_SWIFI_MAIN_NM, X_SWIFI_ADRES1, X_SWIFI_ADRES2 "
-					+ "	, X_SWIFI_INSTL_TY, X_SWIFI_INSTL_MBY, X_SWIFI_SVC_SE, X_SWIFI_CMCWR, X_SWIFI_CNSTC_YEAR, X_SWIFI_INOUT_DOOR, LAT, LNT, WORK_DTTM, SIN_LAT, SIN_LNT, COS_LAT, COS_LNT) "
-					+ " VALUES"
-					+ " (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ";
-			preparedStatement = connection.prepareStatement(sql);
+			StringBuilder sb = new StringBuilder();
+			sb.append("INSERT INTO WIFI_INFO ")
+				.append(" (X_SWIFI_MGR_NO, X_SWIFI_WRDOFC, X_SWIFI_MAIN_NM, X_SWIFI_ADRES1, X_SWIFI_ADRES2 ")
+				.append("	, X_SWIFI_INSTL_TY, X_SWIFI_INSTL_MBY, X_SWIFI_SVC_SE, X_SWIFI_CMCWR, X_SWIFI_CNSTC_YEAR, X_SWIFI_INOUT_DOOR, LAT, LNT, WORK_DTTM, SIN_LAT, SIN_LNT, COS_LAT, COS_LNT) ")
+				.append(" VALUES")
+				.append(" (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ");
+			
+			preparedStatement = connection.prepareStatement(sb.toString());
 			int cnt = 0;
 			for (WifiInfo info: wifiList) {
 				
