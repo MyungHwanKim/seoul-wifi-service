@@ -1,4 +1,4 @@
-package wifi.service;
+package wifi.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import java.util.List;
 import wifi.dto.WifiInfo;
 import wifi.jdbc.JDBCTemplate;
 
-public class WifiService extends JDBCTemplate{
+public class WifiRepository extends JDBCTemplate{
 	public String check(String value) {
 		if (value == null) {
 			return "0.0";

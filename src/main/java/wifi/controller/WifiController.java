@@ -12,17 +12,17 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import wifi.dto.WifiInfo;
-import wifi.service.WifiService;
+import wifi.repository.WifiRepository;
 
 public class WifiController {
 	// 인증키
-    static String key = "574b68744e6b6d683532686a666873";
+    static String key = "본인키";
     
     public long WifiController() throws Exception {
     	JSONParser jsonParser = new JSONParser();
     	long start = System.nanoTime();
     	long totalCount = 0;
-    	WifiService wifiService = new WifiService();
+    	WifiRepository wifiService = new WifiRepository();
     	List<WifiInfo> list = new ArrayList<>();
 
     	for (int k = 0; k < 15; k++) {

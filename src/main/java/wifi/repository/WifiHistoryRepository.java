@@ -1,4 +1,4 @@
-package wifi.service;
+package wifi.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ import java.util.TimeZone;
 import wifi.dto.WifiHistoryInfo;
 import wifi.jdbc.JDBCTemplate;
 
-public class WifiHistoryService extends JDBCTemplate {
+public class WifiHistoryRepository extends JDBCTemplate {
 	public List<WifiHistoryInfo> histroyList() {
 		
 		List<WifiHistoryInfo> wifiHistories = new ArrayList<>();
