@@ -1,7 +1,7 @@
 <%@page import="java.sql.ResultSetMetaData"%>
 <%@page import="wifi.service.WifiService"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page import="wifi.controller.WifiController"%>
+<%@page import="wifi.service.WifiService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -29,7 +29,7 @@
 <body>
 	<p class='information'>
 	<%
-	WifiController wifi = new WifiController();
+	WifiService wifi = new WifiService();
 			out.print(wifi.WifiController());
 	%>
 	 개의 WIFI 정보를 정상적으로 저장하였습니다.</p>

@@ -1,4 +1,4 @@
-package wifi.controller;
+package wifi.service;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -14,7 +14,7 @@ import org.json.simple.parser.JSONParser;
 import wifi.dto.WifiInfo;
 import wifi.repository.WifiRepository;
 
-public class WifiController {
+public class WifiService {
 	// 인증키
     static String key = "본인키";
     
