@@ -13,4 +13,4 @@
 - 2022.05.31 ~ 2022.06.11
 
 ### 유튜브 시연 영상
-- https://youtu.be/e0iaPGkZIzs
+[![Video Label](http://img.youtube.com/vi/e0iaPGkZIzs/0.jpg)](https://youtu.be/e0iaPGkZIzs)
